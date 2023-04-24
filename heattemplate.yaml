@@ -1,0 +1,14 @@
+heat_template_version: 2015-04-30
+
+resources:
+  instance:
+    type: OS::Nova::Server
+    properties:
+      flavor: eo1.xsmall
+      image: Ubuntu 22.04 LTS
+      networks:
+        - network: cloud_00800_1
+      key_name: code-de-el-fra-1-2
+      security_groups:
+        - allow_ping_ssh_icmp_rdp
+        - default
